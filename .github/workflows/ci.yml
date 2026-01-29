@@ -22,6 +22,10 @@ jobs:
 
       - name: Restore
         run: dotnet restore
+        
+      - name: Debug FakeStore API from runner
+        run: |
+          curl -i -A "Mozilla/5.0" https://fakestoreapi.com/products | head -n 40
 
       - name: Build
         run: dotnet build --no-restore -c Release
