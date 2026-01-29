@@ -11,6 +11,7 @@ namespace ApiTests.FakeStore;
 public class ProductsApiTests
 {
     [Fact]
+    [Trait("Category", "ApiIntegration")]
     public async Task Get_Products_Returns_200_OK()
     {
         using var http = new HttpClient
