@@ -22,6 +22,12 @@ jobs:
 
       - name: Restore
         run: dotnet restore
+
+      - name: Debug FakeStore API from runner
+        shell: pwsh
+        run: |
+          curl -Headers @{ "User-Agent" = "Mozilla/5.0" } -Uri https://fakestoreapi.com/products -Verbose
+
         
       - name: Debug FakeStore API from runner
         run: |
